@@ -1,18 +1,16 @@
 # frozen_string_literal: true
 
+require "forwardable"
+
 class IceCream
+  extend Forwardable
+
   def initialize
-    self.open = false
+    self.packege = FoilPackege.new
     self.eaten = false
   end
 
-  def open?
-    open
-  end
-
-  def open!
-    self.open = true
-  end
+  def_delegators :packege, :open?, :open!
 
   def eat!
     raise "Open first!" unless open?
@@ -27,5 +25,5 @@ class IceCream
 
   private
 
-  attr_accessor :open, :eaten
+  attr_accessor :packege, :eaten
 end

@@ -5,7 +5,7 @@ require "./app/ice_cream.rb"
 RSpec.describe IceCream do
   subject(:ice_cream) { described_class.new }
 
-  it "packed" do
+  it "is packed" do
     expect(ice_cream).not_to be_open
   end
 
@@ -19,6 +19,8 @@ RSpec.describe IceCream do
       RuntimeError, "Open first!"
     )
   end
+
+  it { is_expected.not_to be_eaten }
 
   it "can be eaten" do
     ice_cream.open!
