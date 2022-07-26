@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 require "forwardable"
+require "./app/foil_packege.rb"
 
 class IceCream
   extend Forwardable

@@ -2,6 +2,6 @@
 
 class WeatherReporter
   def report
-    rand(1..30)
+    rand(-30..50)
   end
 end
